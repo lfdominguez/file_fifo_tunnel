@@ -9,7 +9,7 @@ async fn main() -> io::Result<()> {
 
     let args: Vec<String> = std::env::args().collect();
 
-    if args.len() != 3 {
+    if args.len() != 3 || args.len() != 4 {
         log::error!("Usage: program_name [-v] fifo_file_in fifo_file_out");
 
         return Err(io::Error::new(
