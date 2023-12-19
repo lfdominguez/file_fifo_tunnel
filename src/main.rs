@@ -9,12 +9,12 @@ async fn main() -> io::Result<()> {
 
     let args: Vec<String> = std::env::args().collect();
 
-    if args.len() != 3 || args.len() != 4 {
+    if args.len() != 3 && args.len() != 4 {
         log::error!("Usage: program_name [-v] fifo_file_in fifo_file_out");
 
         return Err(io::Error::new(
             ErrorKind::Other,
-            format!("Wrong program parameters: {}, expected 2", args.len() - 1)
+            format!("Wrong program parameters: {}, expected 2 or 3", args.len() - 1)
         ));
     }
 
